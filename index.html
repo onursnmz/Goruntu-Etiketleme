@@ -1,0 +1,38 @@
+<!DOCTYPE  html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="container">
+            
+            <div class="row">
+                <div class="col-md-10">
+                <nav className="buttons">
+                <button type="button" class="btn btn-primary" id="bt1">Kare</button>
+                <button type="button" class="btn btn-success" id="bt2">Daire</button>
+                <button type="button" class="btn btn-danger" id="bt3">Poligon</button>
+                <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
+                </nav>
+                <div class="drag-area">
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <header>Bir dosya sürükle</header>
+                <span>yada</span>
+                <button>Dosya Seç</button>
+                <input type="file" hidden/>
+                </div>                       
+                </div>
+                <div class="col-md-2">KORDİNATLAR</div>
+            </div>
+        </div>  
+
+  <script src="script.js"></script>
+
+</body>
+</html>
