@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-  <div class="container">
+        <div class="container">
             
             <div class="row">
                 <div class="col-md-10">
@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
                 </div>
                 <div class="row">
-                 <div class="drag-area">
+                 <div class="drag-area" onclick="showCoords(event)">
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <header>Bir dosya sürükle</header>
                 <span>yada</span>
@@ -32,11 +32,22 @@
                 </div>
                 <div class="col-md-2">
                   <h5 class="cdn">KOORDİNATLAR</h5>
+                  <p id="demo1">X koordinatı =</p>
+                  <p id="demo2">Y koordinatı =</p>
                 </div>
             </div>
         </div>  
-
-  <script src="script.js"></script>
+                <script>
+                  function showCoords(event) {
+                    var x = event.screenX;
+                    var y = event.screenY;
+                    var coords1 = "X koordinatı = " + x
+                    var coords2 = "Y koordinatı = " + y
+                    document.getElementById("demo1").innerHTML = coords1;
+                    document.getElementById("demo2").innerHTML = coords2;
+                  }
+                  </script>
+                <script src="script.js"></script>
 
 </body>
 </html>
