@@ -50,8 +50,8 @@ function showFile(){
     }
     fileReader.readAsDataURL(file);
   }else{
-    alert("This is not an Image File!");
+    alert("Lütfen jpg veya png uzantılı bir dosya seçin !");
     dropArea.classList.remove("active");
-    dragText.textContent = "Drag & Drop to Upload File";
+    dragText.textContent = "dosyayı sürükle";
   }
 }
