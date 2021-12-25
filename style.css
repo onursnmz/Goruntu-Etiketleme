@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-  
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; 
   
 }
 body{
-
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  
   
 }
 .drag-area{
@@ -21,6 +23,7 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 15px;
 }
 .drag-area.active{
   border: 2px solid #fff;
@@ -48,14 +51,14 @@ body{
   outline: none;
   background:black;
   color: bisque;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 }
 .drag-area img{
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -66,13 +69,13 @@ body{
 }
 .col-md-10{
     background-color:aquamarine;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 1px solid #73AD21;
    
 }
 .col-md-2{
     background-color:turquoise;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 1px solid #73AD21;
     padding-left: 5px;
 
