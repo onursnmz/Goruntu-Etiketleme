@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
                 </div>
                 <div class="row">
-                 <div class="drag-area" onclick="showCoords(event)">
+                 <div class="drag-area"  onclick="showCoords(event)" >
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <header>Bir dosya sürükle</header>
                 <span>yada</span>
@@ -34,6 +34,7 @@
                   <h5 class="cdn">KOORDİNATLAR</h5>
                   <p id="coords1">X koordinatı =</p>
                   <p id="coords2">Y koordinatı =</p>
+                 
                 </div>
             </div>
         </div>  
@@ -44,8 +45,30 @@
                     var coords1 = "X koordinatı = " + x
                     var coords2 = "Y koordinatı = " + y
                     document.getElementById("coords1").innerHTML = coords1;
-                    document.getElementById("coords2").innerHTML = coords2;
+                    document.getElementById("coords2").innerHTML = coords2; 
+                    draw();                
                   }
+                     function draw() {
+                    const canvas = document.querySelector('drag-area');
+
+                    if (!canvas.getContext) {
+                        return;
+                    }
+                    const ctx = canvas.getContext('2d');
+
+                    // set line stroke and line width
+                    ctx.strokeStyle = 'black';
+                    ctx.lineWidth = 15;
+
+                    // draw a red line
+                    ctx.beginPath();
+                    ctx.moveTo(100, 100);
+                    ctx.lineTo(300, 100);
+                    ctx.stroke();
+
+                }
+                
+                  
                   </script>
                 <script src="script.js"></script>
 
