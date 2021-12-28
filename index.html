@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
                 </div>
                 <div class="row">
-                 <div class="drag-area"  onclick="showCoords(event)" >
+                 <div class="drag-area"  onclick="showCoords(event)" ondblclick="draw(event)" >
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <header>Bir dosya sürükle</header>
                 <span>yada</span>
@@ -49,22 +49,22 @@
                     draw();                
                   }
                      function draw() {
-                    const canvas = document.querySelector('drag-area');
+                    const canvas = document.querySelector();
 
                     if (!canvas.getContext) {
                         return;
                     }
-                    const ctx = canvas.getContext('2d');
+                    const ciz = canvas.getContext('2d');
 
                     // set line stroke and line width
-                    ctx.strokeStyle = 'black';
-                    ctx.lineWidth = 15;
+                    ciz.strokeStyle = 'red';
+                    ciz.lineWidth = 15;
 
                     // draw a red line
-                    ctx.beginPath();
-                    ctx.moveTo(100, 100);
-                    ctx.lineTo(300, 100);
-                    ctx.stroke();
+                    ciz.beginPath();
+                    ciz.moveTo(100, 100);
+                    ciz.lineTo(300, 100);
+                    ciz.stroke();
 
                 }
                 
