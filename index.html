@@ -21,7 +21,9 @@
                 <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
                 </div>
                 <div class="row">
-                 <div class="drag-area"  onclick="showCoords(event)" ondblclick="draw(event)" >
+                 <div class="drag-area"  onclick="showCoords(event)" >
+                  <canvas id="canvas"></canvas>
+                  <div id="output"></div>
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <header>Bir dosya sürükle</header>
                 <span>yada</span>
@@ -39,33 +41,57 @@
             </div>
         </div>  
                 <script>
+
                   function showCoords(event) {
+                   
                     var x = event.screenX;
                     var y = event.screenY;
                     var coords1 = "X koordinatı = " + x
                     var coords2 = "Y koordinatı = " + y
                     document.getElementById("coords1").innerHTML = coords1;
                     document.getElementById("coords2").innerHTML = coords2; 
-                                    
-                  }
-                  function getMousePosition(canvas, event) {
-                   let rect = canvas.getBoundingClientRect();
-                   let x = event.clientX - rect.left;
-                   let y = event.clientY - rect.top;
-                  console.log("Coordinate x: " + x, 
-                        "Coordinate y: " + y);
-                 }
-      
-                  let canvasElem = document.querySelector("drag-area");
-                    
-                  canvasElem.addEventListener("mousedown", function(e)
-                  {
-                      getMousePosition(canvasElem, e);
+                                  
+                  }   
+                 //Canvas
+                  var canvas = document.getElementById('drag-area');
+                  var ctx = canvas.getContext('2d');
+                  //Variables
+                  var canvasx = $(canvas).offset().left;
+                  var canvasy = $(canvas).offset().top;
+                  var last_mousex = last_mousey = 0;
+                  var mousex = mousey = 0;
+                  var mousedown = false;
+
+                  //Mousedown
+                  $(canvas).on('mousedown', function(e) {
+                      last_mousex = parseInt(e.clientX-canvasx);
+                    last_mousey = parseInt(e.clientY-canvasy);
+                      mousedown = true;
                   });
 
-                
-                
-                  
+                  //Mouseup
+                  $(canvas).on('mouseup', function(e) {
+                      mousedown = false;
+                  });
+
+                  //Mousemove
+                  $(canvas).on('mousemove', function(e) {
+                      mousex = parseInt(e.clientX-canvasx);
+                    mousey = parseInt(e.clientY-canvasy);
+                      if(mousedown) {
+                          ctx.clearRect(0,0,canvas.width,canvas.height); //clear canvas
+                          ctx.beginPath();
+                          ctx.moveTo(last_mousex,last_mousey);
+                          ctx.lineTo(mousex,mousey);
+                          ctx.strokeStyle = 'black';
+                          ctx.lineWidth = 2;
+                          ctx.lineJoin = ctx.lineCap = 'round';
+                          ctx.stroke();
+                      }
+                      //Output
+                      $('#output').html('current: '+mousex+', '+mousey+'<br/>last: '+last_mousex+', '+last_mousey+'<br/>mousedown: '+mousedown);
+                  });                
+
                   </script>
                 <script src="script.js"></script>
 
