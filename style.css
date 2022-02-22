@@ -23,7 +23,7 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 15px;
+  
 }
 .drag-area.active{
   border: 2px solid #fff;
@@ -58,7 +58,7 @@ body{
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
