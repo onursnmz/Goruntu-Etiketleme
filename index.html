@@ -20,8 +20,9 @@
                 <button type="button" class="btn btn-warning" id="bt5">Çiz</button>                
                 </div>
                 <div class="row">
+                 
                  <div class="drag-area"  onclick="showCoords(event)" >
-                  
+                
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                 <header>Bir dosya sürükle</header>
                 <span>yada</span>
@@ -44,16 +45,16 @@
         </div>  
                 <script>
 
-                //  function showCoords(event) {
+                  function showCoords(event) {
                    
-                  //  var x = event.screenX;
-                  //  var y = event.screenY;
-                 //   var coords1 = "X koordinatı = " + x
-                   // var coords2 = "Y koordinatı = " + y
-                  //  document.getElementById("coords1").innerHTML = coords1;
-                  //  document.getElementById("coords2").innerHTML = coords2; 
+                    var x = event.screenX;
+                    var y = event.screenY;
+                    var coords1 = "X koordinatı = " + x
+                    var coords2 = "Y koordinatı = " + y
+                    document.getElementById("coords1").innerHTML = coords1;
+                    document.getElementById("coords2").innerHTML = coords2; 
                                   
-                //  }                      
+                  }                      
                       var canvasWidth = 900;
                       var canvasHeight = 600;
                       var canvas = null;
@@ -73,7 +74,7 @@
                         ctx.fillRect(0,0,canvasWidth,canvasHeight);
                         
                         ctx.strokeStyle = "black";
-                        ctx.lineWidth = 2;
+                        ctx.lineWidth = 1;
                         ctx.beginPath();
                         
                         for (var i = 0; i < existingLines.length; ++i) {
@@ -86,7 +87,7 @@
                         
                         if (isDrawing) {
                           ctx.strokeStyle = "darkred";
-                          ctx.lineWidth = 2;
+                          ctx.lineWidth = 1;
                           ctx.beginPath();
                           ctx.moveTo(startX,startY);
                           ctx.lineTo(mouseX,mouseY);
