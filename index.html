@@ -22,12 +22,11 @@
                 <div class="row">
                  
                  <div class="drag-area"  onclick="showCoords(event)" >
-                
-                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                <header>Bir dosya sürükle</header>
-                <span>yada</span>
+                <div style="margin-top: -5%; margin-left: -7%;">           
                 <button>Dosya Seç</button>
-                <input type="file" hidden/>
+                <input type="file" hidden/>               
+                </div>
+                <canvas id="canvas" width="800" height="500"></canvas>
                 </div>  
                 </div>                                   
                 </div>
@@ -39,7 +38,7 @@
                 </div>
             </div>
             
-              <canvas id="canvas" width="800" height="500"></canvas>
+              
               <div id="output"></div>
             
         </div>  
