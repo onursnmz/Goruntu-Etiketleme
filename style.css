@@ -109,6 +109,10 @@ body{
   height: 20px;
 }
 canvas {
-  cursor: crosshair;
-  border: 1px solid #e71111;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: solid 1px rgb(238, 11, 11);
+  border-radius: 5px;
 }
